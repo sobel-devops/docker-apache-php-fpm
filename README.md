@@ -10,7 +10,7 @@ docker build -t sobel/apache-fpm .
 images are in docker hub via link  https://hub.docker.com/u/fallphenix
 
 
-### running
+### build and running from source
 
 creating network for the stack
 ```
@@ -53,3 +53,6 @@ sites-enabled folder
 
 then go to : http://localhost/index.php
 ![Alt text](info.png?raw=true "phpinfo()")
+
+
+### build and running from docker hub
