@@ -28,4 +28,27 @@ docker run -d   -p 80:80 --network infra-net -v path-to\sites-enabled:/etc/apach
 
 sites-enabled folder 
 
+000-default.conf
+```
+<VirtualHost *:80>
+    DocumentRoot /var/www/html
+ 
+    <Directory /var/www/html>
+        Options -Indexes +FollowSymLinks +MultiViews
+        AllowOverride All
+        Require all granted
+    </Directory>
+ 
+    <FilesMatch \.php$>
+        # 2.4.10+ can proxy to unix socket
+        #SetHandler "proxy:unix:/run/php/php-fpm.sock|fcgi://127.0.0.1:9000"
+
+         SetHandler "proxy:fcgi://php-fpm-host:9000"
+    </FilesMatch>
+ 
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+```
+
 then go to : http://localhost/index.php
