@@ -52,3 +52,4 @@ sites-enabled folder
 ```
 
 then go to : http://localhost/index.php
+![Alt text](info.png?raw=true "phpinfo()")
