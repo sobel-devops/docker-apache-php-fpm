@@ -6,6 +6,7 @@ RUN apt -y install telnet
 RUN a2dismod mpm_prefork
 RUN a2enmod mpm_event
 RUN a2enmod rewrite
+RUN a2enmod remoteip
 RUN a2enmod alias proxy proxy_fcgi
 RUN chown -R www-data:www-data /var/www
 RUN mkdir -p /var/run/apache2

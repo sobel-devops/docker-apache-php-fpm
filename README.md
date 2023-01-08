@@ -26,7 +26,7 @@ running the apache server with sites-enabled folder :
 docker run -d   -p 80:80 --network infra-net -v path-to\sites-enabled:/etc/apache2/sites-enabled   --name apache-fpm   sobel/apache-fpm
 ```
 
-sites-enabled folder 
+### sites-enabled folder 
 
 000-default.conf
 ```
